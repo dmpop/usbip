@@ -26,4 +26,5 @@ while [ -z "$camera" ]; do
 done
 
 sudo usbipd -D
-sudo usbip bind -b 1-1
+busid=$(head -n 1 "$HOME/.busid")
+sudo usbip bind -b $busid

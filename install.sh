@@ -18,6 +18,7 @@
 # Author: Dmitri Popov, dmpop@linux.com
 # Source code: https://github.com/dmpop/usbip
 
+cd
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install git usbip gphoto2 hwdata
 git clone https://github.com/dmpop/usbip.git
@@ -26,4 +27,5 @@ crontab -l | {
         cat
         echo "@reboot sudo /home/"$USER"/usbip/usbip-bind.sh"
         } | crontab
+echo "1-1.1" > .busid
 sudo reboot
