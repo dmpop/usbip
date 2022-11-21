@@ -25,6 +25,16 @@ while [ -z "$camera" ]; do
 	camera=$(gphoto2 --auto-detect | grep usb)
 done
 
+# Read busid from the .busid file
+# Bind usbip
 sudo usbipd -D
 busid=$(head -n 1 "$HOME/.busid")
 sudo usbip bind -b $busid
+
+# Waite for camera to be turned off
+while [ ! -z "$camera" ]; do
+	sleep 1
+	camera=$(gphoto2 --auto-detect | grep usb)
+done
+
+sudo poweroff
