@@ -18,23 +18,25 @@
 # Author: Dmitri Popov, dmpop@linux.com
 # Source code: https://github.com/dmpop/usbip
 
+# Read busid and camera maker from the .usbip.conf file
+busid=$(sed -n '1p' "$HOME/.usbip.conf")
+camera=$(sed -n '2p' "$HOME/.usbip.conf")
+
 # Wait for camera
-camera=$(gphoto2 --auto-detect | grep usb)
-while [ -z "$camera" ]; do
+status=$(lsusb | grep "$camera")
+while [ -z "$status" ]; do
 	sleep 1
-	camera=$(gphoto2 --auto-detect | grep usb)
+	status=$(lsusb | grep "$camera")
 done
 
-# Read busid from the .busid file
 # Bind usbip
 sudo usbipd -D
-busid=$(head -n 1 "$HOME/.busid")
 sudo usbip bind -b $busid
 
 # Waite for camera to be turned off
-while [ ! -z "$camera" ]; do
+while [ ! -z "$status" ]; do
 	sleep 1
-	camera=$(gphoto2 --auto-detect | grep usb)
+	status=$(lsusb | grep "$camera")
 done
 
 sudo poweroff
