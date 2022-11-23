@@ -34,7 +34,6 @@ crontab -l | {
         echo "@reboot /home/"$USER"/usbip/usbip-bind.sh"
         } | crontab
 echo "1-1.1" > "$HOME/.usbip.conf"
-read -p "Specify camera maker (e.g., Nikon, Canon, Sony): " camera
-echo "$camera" >> "$HOME/.usbip.conf"
+echo "$1" >> "$HOME/.usbip.conf"
 
 sudo reboot
