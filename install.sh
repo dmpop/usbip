@@ -18,6 +18,11 @@
 # Author: Dmitri Popov, dmpop@linux.com
 # Source code: https://github.com/dmpop/usbip
 
+if [[ $EUID -eq 0 ]]; then
+        echo "Run the script as a regular user"
+        exit 1
+fi
+
 cd
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install git usbip hwdata
