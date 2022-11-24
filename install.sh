@@ -34,8 +34,8 @@ crontab -l | {
         echo "@reboot /home/"$USER"/usbip/usbip-bind.sh"
         } | crontab
 echo "$1" > "$HOME/.usbip.conf"
-echo "$2" >> "$HOME/.usbip.conf"
 
+echo "====="
 echo "All done! Reboot the Raspberry Pi."
 echo "Read the Linux Photography book for furher instructions:"
 echo "https://dmpop.gumroad.com/l/linux-photography"

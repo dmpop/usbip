@@ -8,10 +8,16 @@ Shell scripts tat transform a Raspberry Pi into a USB-over-IP camera server.
 
 ## Installation
 
-On the Raspberry Pi, run the following command (replace `CAMERA_MAKER` with the actual camera manufacturer, for example: `Nikon`, `Canon`, `Sony`, etc.):
+On the Raspberry Pi, run the following command (replace `[device_id]` with the actual device ID, that can be obtained using the `lsusb` command):
 
 ```
-bash <(curl -sSL https://raw.githubusercontent.com/dmpop/usbip/main/install.sh) CAMERA_MAKER
+bash <(curl -sSL https://raw.githubusercontent.com/dmpop/usbip/main/install.sh) [device_id]
+```
+
+For example:
+
+```
+bash <(curl -sSL https://raw.githubusercontent.com/dmpop/usbip/main/install.sh) "04b0:042a"
 ```
 
 ## Author

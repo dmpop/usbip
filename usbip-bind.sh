@@ -18,25 +18,24 @@
 # Author: Dmitri Popov, dmpop@linux.com
 # Source code: https://github.com/dmpop/usbip
 
-# Read busid and camera maker from the .usbip.conf file
-busid=$(sed -n '1p' "$HOME/.usbip.conf")
-camera=$(sed -n '2p' "$HOME/.usbip.conf")
+# Read Device ID from the .usbip.conf file
+id=$(sed -n '1p' "$HOME/.usbip.conf")
 
 # Wait for camera
-status=$(lsusb | grep "$camera")
+status=$(lsusb | grep "$id")
 while [ -z "$status" ]; do
 	sleep 1
-	status=$(lsusb | grep "$camera")
+	status=$(lsusb | grep "$id")
 done
 
 # Bind usbip
 sudo usbipd -D
-sudo usbip bind -b $busid
+sudo usbip bind --$(sudo usbip list -p -l | grep "#usbid=$id#" | cut '-d#' -f1)
 
 # Waite for camera to be turned off
 while [ ! -z "$status" ]; do
 	sleep 1
-	status=$(lsusb | grep "$camera")
+	status=$(lsusb | grep "$id")
 done
 
 sudo poweroff
