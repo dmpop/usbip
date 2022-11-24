@@ -27,13 +27,17 @@ cd
 sudo apt update && sudo apt -y upgrade
 sudo apt -y install git usbip hwdata
 git clone https://github.com/dmpop/usbip.git
-chmod +x usbip/usbip-bind.sh
+chmod +x usbip/*.sh
 sudo sh -c "echo 'usbip_host' >> /etc/modules"
 crontab -l | {
         cat
         echo "@reboot /home/"$USER"/usbip/usbip-bind.sh"
-        } | crontab
-echo "$1" > "$HOME/.usbip.conf"
+} | crontab
+crontab -l | {
+        cat
+        echo "@reboot sudo /home/"$USER"/usbip/ip.sh"
+} | crontab
+echo "$1" >"$HOME/.usbip.conf"
 
 echo "====="
 echo "All done! Reboot the Raspberry Pi."
