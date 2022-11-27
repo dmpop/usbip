@@ -23,7 +23,7 @@ id=$(sed -n '1p' "$HOME/.usbip.conf")
 
 # Set ACT LED to heartbeat to indicated that script is running correctly 
 if [ ! -z "$id" ]; then
-	sudo bash -c "echo "heartbeat" >/sys/class/leds/led0/trigger"
+	sudo bash -c "echo "heartbeat" >/sys/class/leds/led1/trigger"
 fi
 
 # Wait for camera
