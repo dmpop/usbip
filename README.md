@@ -20,6 +20,10 @@ For example:
 bash <(curl -sSL https://raw.githubusercontent.com/dmpop/usbip/main/install.sh) "04b0:042a"
 ```
 
+The [Linux Photography](https://gumroad.com/l/linux-photography) book provides detailed instructions on installing and using USBIP. Get your copy at [Google Play Store](https://play.google.com/store/books/details/Dmitri_Popov_Linux_Photography?id=cO70CwAAQBAJ) or [Gumroad](https://gumroad.com/l/linux-photography).
+
+<img src="https://tokyoma.de/bookcovers/linux-photography.jpg" title="Linux Photography book" width="200"/>
+
 ## Author
 
 Dmitri Popov [dmpop@linux.com](mailto:dmpop@tokyoma.de)
