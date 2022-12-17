@@ -40,6 +40,6 @@ crontab -l | {
 echo "$1" >"$HOME/.usbip.conf"
 
 echo "====="
-echo "All done! Reboot the Raspberry Pi."
+echo "All done! Reboot the machine."
 echo "Read the Linux Photography book for furher instructions:"
 echo "https://dmpop.gumroad.com/l/linux-photography"

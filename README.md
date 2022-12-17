@@ -1,14 +1,14 @@
 # USBIP
 
-Shell scripts tat transform a Raspberry Pi into a USB-over-IP camera server.
+Shell scripts tat transform a single-board computer (SBC) running a Debian-based system into a USB-over-IP camera server.
 
 # Requirements
 
-- Raspberry Pi running the latest version of the Raspberry Pi OS Lite system
+- SBC running the latest version of a Debian or Ubuntu-based Linux distribution like [DietPi](https://dietpi.com) system
 
 ## Installation
 
-On the Raspberry Pi, run the following command (replace `[device_id]` with the actual device ID, that can be obtained using the `lsusb` command):
+On the SBC, run the following command (replace `[device_id]` with the actual device ID, that can be obtained using the `lsusb` command):
 
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/dmpop/usbip/main/install.sh) [device_id]

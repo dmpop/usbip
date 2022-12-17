@@ -21,11 +21,6 @@
 # Read Device ID from the .usbip.conf file
 id=$(sed -n '1p' "$HOME/.usbip.conf")
 
-# Set ACT LED to heartbeat to indicated that script is running correctly 
-if [ ! -z "$id" ]; then
-	sudo bash -c "echo "heartbeat" >/sys/class/leds/led1/trigger"
-fi
-
 # Wait for camera
 status=$(lsusb | grep "$id")
 while [ -z "$status" ]; do
