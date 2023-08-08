@@ -1,6 +1,6 @@
 # USBIP
 
-Shell scripts tat transform a single-board computer (SBC) running a Debian-based system into a USB-over-IP camera server.
+Shell scripts that transform a single-board computer (SBC) running a Debian-based system into a USB-over-IP camera server.
 
 # Requirements
 
@@ -22,7 +22,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/dmpop/usbip/main/install.sh) 
 
 The [Linux Photography](https://gumroad.com/l/linux-photography) book provides detailed instructions on installing and using USBIP. Get your copy at [Google Play Store](https://play.google.com/store/books/details/Dmitri_Popov_Linux_Photography?id=cO70CwAAQBAJ) or [Gumroad](https://gumroad.com/l/linux-photography).
 
-<img src="https://tokyoma.de/bookcovers/linux-photography.jpg" title="Linux Photography book" width="200"/>
+<img src="https://cameracode.coffee/uploads/linux-photography.png" title="Linux Photography book" width="300"/>
 
 ## Author
 
